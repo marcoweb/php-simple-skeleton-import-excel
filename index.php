@@ -1,4 +1,5 @@
 <?php
+require_once('vendor/autoload.php');
 //-----------[ CONFIGURAÇÕES GERAIS DA APLICAÇÃO ]------------
 
 const HOME_PAGE = '/page/index';

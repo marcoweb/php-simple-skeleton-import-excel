@@ -1,1 +1,17 @@
+<?php
+$filePath = 'assets/exemplo.xlsx';
+$msg = "Falha";
+if(file_exists($filePath)) { 
+    $msg = "Funciona";
+    $reader = \PhpOffice\PhpSpreadsheet\IOFactory::createReaderForFile($filePath);
+    $reader->setReadDataOnly(true);
+    $spreadsheet =  $reader->load($filePath);
+}
+
+?>
 <h1>Bem Vindo</h1>
+<h2><?= $msg ?></h2>
+<pre>
+<?php print_r($spreadsheet->getActiveSheet()->toArray()) ?>
+</pre>
+
